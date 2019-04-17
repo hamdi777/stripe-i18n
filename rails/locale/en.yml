@@ -1,15 +1,128 @@
 en:
   stripe:
     errors:
-      incorrect_number: "The card number is incorrect."
-      invalid_number: "The card number is not a valid credit card number."
-      invalid_expiry_month: "The card's expiration month is invalid."
-      invalid_expiry_year: "The card's expiration year is invalid."
-      invalid_cvc: "The card's security code is invalid."
-      expired_card: "The card has expired."
-      incorrect_cvc: "The card's security code is incorrect."
-      incorrect_zip: "The card's zip code failed validation."
-      card_declined: "The card was declined."
-      missing: "There is no card on a customer that is being charged."
-      processing_error: "An error occurred while processing the card."
-      rate_limit: "An error occurred due to requests hitting the API too quickly. Please let us know if you're consistently running into this error."
+      card_declined: The card was declined.
+      reason: Reason
+      decline_reasons:
+        invalid_expiry_month: The card's expiration month is invalid.
+        approve_with_id: The payment cannot be authorized.
+        call_issuer: The card has been declined for an unknown reason. Contact us please.
+        card_not_supported: The card does not support this type of purchase.
+        card_velocity_exceeded: You have exceeded the balance or credit limit available on their card.
+        currency_not_supported: The card does not support the specified currency.
+        do_not_honor: The card has been declined for an unknown reason. Contact us please.
+        do_not_try_again: The card has been declined for an unknown reason. Contact us please.
+        duplicate_transaction: A transaction with identical amount and credit card information was submitted very recently.
+        expired_card: The card has expired.
+        fraudulent: The payment has been declined as Stripe suspects it is fraudulent.
+        generic_decline: The card has been declined for an unknown reason. Contact us please.
+        incorrect_number: The card number is incorrect.
+        incorrect_cvc: The CVC number is incorrect.
+        incorrect_pin: The PIN entered is incorrect. This decline code only applies to payments made with a card reader.
+        incorrect_zip: The ZIP/postal code is incorrect.
+        insufficient_funds: The card has insufficient funds to complete the purchase.
+        invalid_account: The card, or account the card is connected to, is invalid.
+        invalid_amount: The payment amount is invalid, or exceeds the amount that is allowed.
+        invalid_cvc: The CVC number is incorrect.
+        invalid_expiry_year: The expiration year invalid.
+        invalid_number: The card number is incorrect.
+        invalid_pin: The PIN entered is incorrect. This decline code only applies to payments made with a card reader.
+        issuer_not_available: The card issuer could not be reached, so the payment could not be authorized.
+        lost_card: The payment has been declined because the card is reported lost.
+        merchant_blacklist: The payment has been declined because it matches a value on the Stripe user's blocklist.
+        new_account_information_available: The card, or account the card is connected to, is invalid.
+        no_action_taken: The card has been declined for an unknown reason. Contact us please.
+        not_permitted: The payment is not permitted.
+        pickup_card: The card cannot be used to make this payment (it is possible it has been reported lost or stolen).
+        pin_try_exceeded: The allowable number of PIN tries has been exceeded.
+        processing_error: An error occurred while processing the card.
+        reenter_transaction: The payment could not be processed by the issuer for an unknown reason.
+        restricted_card: The card cannot be used to make this payment (it is possible it has been reported lost or stolen).
+        revocation_of_all_authorizations: The card has been declined for an unknown reason.
+        revocation_of_authorization: The card has been declined for an unknown reason. Contact us please.
+        security_violation: The card has been declined for an unknown reason. Contact us please.
+        service_not_allowed: The card has been declined for an unknown reason. Contact us please.
+        stolen_card: The payment has been declined because the card is reported stolen.
+        stop_payment_order: The card has been declined for an unknown reason. Contact us please.
+        testmode_decline: A Stripe test card number was used.
+        transaction_not_allowed: The card has been declined for an unknown reason. Contact us please.
+        try_again_later: The card has been declined for an unknown reason. Contact us please.
+        withdrawal_count_limit_exceeded: The customer has exceeded the balance or credit limit available on their card.
+      missing: There is no card on a customer that is being charged.
+      processing_error: An error occurred while processing the card.
+      rate_limit: An error occurred due to requests hitting the API too quickly. Please let us know if you're consistently running into this error.
+      account_already_exists: This account already exists
+      account_country_invalid_address: Businesses must be located in the same country as the account
+      account_invalid: Invalid Account
+      account_number_invalid: Invalid Account Number
+      alipay_upgrade_required: Alipay upgrade Required
+      amount_too_large: The specified amount is greater than the maximum amount allowed
+      amount_too_small: The specified amount is less than the minimum amount allowed
+      api_key_expired: The api Key Has Expired
+      balance_insufficient: Account does not have a sufficient balance available
+      bank_account_exists: The bank account provided already exists
+      bank_account_unusable: The bank account provided cannot be used for payouts
+      bank_account_unverified: Your Connect platform is attempting to share an unverified bank account with a connected account.
+      bitcoin_upgrade_required: This method for creating Bitcoin payments is not supported anymore
+      charge_already_captured: The charge has been already Captured
+      charge_already_refunded: Charge has already been refunded
+      charge_disputed: The charge you’re attempting to refund has been charged back.
+      charge_exceeds_source_limit: This charge would cause you to exceed your rolling-window processing limit for this source type
+      charge_expired_for_capture: This Charge has expired
+      country_unsupported: Your country is not supported by our system
+      coupon_expired: Coupon has expired
+      customer_max_subscriptions: You reached the maximum number of subscriptions
+      email_invalid: invalid email
+      idempotency_key_in_use: The idempotency key provided is currently being used in another request
+      incorrect_address: Invalid address
+      instant_payouts_unsupported: The debit card provided as an external account does not support instant payouts.
+      invalid_card_type: This Card Type is not supported
+      invalid_charge_amount: The specified amount is invalid
+      invalid_source_usage: The source cannot be used because it is not in the correct state.
+      invoice_no_customer_line_items: An invoice cannot be generated for the specified customer as there are no pending invoice items.
+      invoice_no_subscription_line_items: An invoice cannot be generated for the specified subscription as there are no pending invoice items.
+      invoice_not_editable: The specified invoice can no longer be edited.
+      invoice_upcoming_none: There is no upcoming invoice on the specified customer to preview.
+      livemode_mismatch: Test and live mode API keys, requests, and objects are only available within the mode they are in.
+      not_allowed_on_standard_account: Transfers and payouts on behalf of a Standard connected account are not allowed.
+      order_creation_failed: The order could not be created. Check the order details and then try again.
+      order_required_settings: The order could not be processed as it is missing required information.
+      order_status_invalid: The order cannot be updated because the status provided is either invalid or does not follow the order lifecycle.
+      order_upstream_timeout: The request timed out. Try again later.
+      out_of_inventory: The SKU is out of stock.
+      parameter_invalid_empty: Missing informations
+      parameter_invalid_integer: Must be a number
+      parameter_invalid_string_blank: Can't be blank
+      parameter_invalid_string_empty: Fields must have at least one character
+      parameter_missing: Missing parameter
+      parameter_unknown: Unknow parameter
+      parameters_exclusive: Two or more mutually exclusive parameters were provided.
+      payment_intent_authentication_failure: The provided payment method has failed authentication.
+      payment_intent_incompatible_payment_method: The Payment Intent expected a payment method with different properties than what was provided.
+      payment_intent_invalid_parameter: Parameters were not allowed for the given operation on the PaymentIntent.
+      payment_intent_payment_attempt_failed: The latest payment attempt for the PaymentIntent has failed.
+      payment_intent_unexpected_state: The PaymentIntent’s state was incompatible with the operation you were trying to perform.
+      payment_method_unactivated: The charge cannot be created as the payment method used has not been activated.
+      payment_method_unexpected_state: The provided payment method’s state was incompatible with the operation you were trying to perform.
+      payouts_not_allowed: Payouts have been disabled on the connected account.
+      platform_api_key_expired: The API key provided by your Connect platform has expired.
+      postal_code_invalid: The postal code provided is incorrect.
+      product_inactive: The product this SKU belongs to is no longer available for purchase.
+      resource_already_exists: This resource already exists
+      resource_missing: The ID provided is not valid.
+      routing_number_invalid: The bank routing number provided is invalid.
+      secret_key_required: The API key provided is a publishable key, but a secret key is required.
+      sepa_unsupported_account: Your account does not support SEPA payments.
+      shipping_calculation_failed: Shipping calculation failed as the information provided was either incorrect or could not be verified.
+      sku_inactive: The SKU is inactive and no longer available for purchase.
+      state_unsupported: U.S. custom account Legal entity is invalid
+      tax_id_invalid: The tax ID number provided is invalid
+      taxes_calculation_failed: Tax calculation for the order failed.
+      testmode_charges_only: Your account has not been activated and can only make test charges.
+      tls_version_unsupported: You must be using TLS 1.2 or above.
+      token_already_used: The token provided has already been used.
+      token_in_use: The token provided is currently being used in another request.
+      transfers_not_allowed: The requested transfer cannot be created. Contact us if you are receiving this error.
+      upstream_order_creation_failed: The order could not be created. Check the order details and then try again.
+      url_invalid: The URL provided is invalid.
+      connection_error: Connection lost to Stripe

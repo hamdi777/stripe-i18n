@@ -1,15 +1,128 @@
 es:
   stripe:
     errors:
-      incorrect_number: "El número de tarjeta es incorrecto."
-      invalid_number: "El número de tarjeta no es válido."
-      invalid_expiry_month: "El mes de vencimiento de la tarjeta no es válido."
-      invalid_expiry_year: "El año de vencimiento de la tarjeta no es válido."
-      invalid_cvc: "El código de seguridad de la tarjeta no es válido."
-      expired_card: "La tarjeta está vencida."
-      incorrect_cvc: "El código de seguridad de la tarjeta es incorrecto."
-      incorrect_zip: "La verificación del código postal de la tarjeta falló."
-      card_declined: "La tarjeta fue rechazada."
-      missing: "No existe una tarjeta asociada al cliente al que se le está cobrando."
-      processing_error: "Ocurrió un error mientras se procesaba la tarjeta."
-      rate_limit: "Ocurrió un error debido a las solicitudes que llegan a IPA muy rápido. Háganos saber si este error se le presenta de manera constante."
+      card_declined: La tarjeta fue rechazada.
+      reason: razón
+      decline_reasons:
+        invalid_expiry_month: El mes de caducidad de la tarjeta no es válido.
+        approve_with_id: el pago no puede ser autorizado.
+        call_issuer: La tarjeta ha sido rechazada por una razón desconocida. Póngase en contacto con nosotros por favor.
+        card_not_supported: la tarjeta no admite este tipo de compra.
+        card_velocity_exceeded: ha superado el saldo o el límite de crédito disponible en su tarjeta.
+        currency_not_supported: la tarjeta no es compatible con la moneda especificada.
+        do_not_honor: la tarjeta se ha rechazado por un motivo desconocido. Póngase en contacto con nosotros por favor.
+        do_not_try_again: La tarjeta se ha rechazado por un motivo desconocido. Póngase en contacto con nosotros por favor.
+        duplicate_transaction: una transacción con una cantidad idéntica e información de tarjeta de crédito se envió muy recientemente.
+        expired_card: La tarjeta ha caducado.
+        fraudulent: el pago se ha rechazado porque Stripe sospecha que es fraudulento.
+        generic_decline: la tarjeta ha sido rechazada por un motivo desconocido. Póngase en contacto con nosotros por favor.
+        incorrect_number: el número de la tarjeta es incorrecto.
+        incorrect_cvc: El número CVC es incorrecto.
+        incorrect_pin: El PIN introducido es incorrecto. Este código de rechazo solo se aplica a los pagos realizados con un lector de tarjetas.
+        incorrect_zip: El código postal / postal es incorrecto.
+        insufficient_funds: la tarjeta no tiene fondos suficientes para completar la compra.
+        invalid_account: La tarjeta o cuenta a la que está conectada la tarjeta no es válida.
+        invalid_amount: el importe del pago no es válido o supera el importe permitido.
+        invalid_cvc: El número CVC es incorrecto.
+        invalid_expiry_year: el año de caducidad no es válido.
+        invalid_number: el número de tarjeta es incorrecto
+        invalid_pin: El PIN introducido es incorrecto. Este código de rechazo solo se aplica a los pagos realizados con un lector de tarjetas.
+        issuer_not_available: No se pudo contactar con el emisor de la tarjeta, por lo que no se pudo autorizar el pago.
+        lost_card: El pago se ha rechazado porque se informa que la tarjeta se perdió.
+        merchant_blacklist: el pago se ha rechazado porque coincide con un valor en la lista de bloqueo del usuario de Stripe.
+        new_account_information_available: la tarjeta o cuenta a la que está conectada no es válida.
+        no_action_taken: la tarjeta ha sido rechazada por un motivo desconocido. Póngase en contacto con nosotros por favor.
+        not_permitted: El pago no está permitido.
+        pickup_card: la tarjeta no se puede usar para hacer este pago (es posible que se haya reportado como extraviada o robada).
+        pin_try_exceeded: Se ha excedido el número permitido de intentos de PIN.
+        processing_error: Se produjo un error al procesar la tarjeta.
+        reenter_transaction: el emisor no pudo procesar el pago por un motivo desconocido.
+        restricted_card: la tarjeta no puede utilizarse para realizar este pago (es posible que se haya reportado como extraviada o robada).
+        revocation_of_all_authorizations: La tarjeta se ha rechazado por un motivo desconocido.
+        revocation_of_authorization: La tarjeta ha sido rechazada por un motivo desconocido. Póngase en contacto con nosotros por favor.
+        security_violation: La tarjeta ha sido rechazada por una razón desconocida. Póngase en contacto con nosotros por favor.
+        service_not_allowed: la tarjeta se ha rechazado por un motivo desconocido. Póngase en contacto con nosotros por favor.
+        stolen_card: El pago se ha rechazado porque la tarjeta fue reportada como robada.
+        stop_payment_order: la tarjeta se ha rechazado por un motivo desconocido. Póngase en contacto con nosotros por favor.
+        testmode_decline: se usó un número de tarjeta de prueba de banda.
+        transaction_not_allowed: la tarjeta se ha rechazado por un motivo desconocido. Póngase en contacto con nosotros por favor.
+        try_again_later: la tarjeta ha sido rechazada por un motivo desconocido. Póngase en contacto con nosotros por favor.
+        withdrawal_count_limit_exceeded: El cliente ha superado el saldo o el límite de crédito disponible en su tarjeta.
+      missing: No hay una tarjeta en un cliente que se está cargando.
+      processing_error: Se produjo un error al procesar la tarjeta.
+      rate_limit: se produjo un error debido a que las solicitudes llegaron a la API demasiado rápido. Por favor, háganos saber si está ejecutando constantemente este error.
+      account_already_exists: esta cuenta ya existe
+      account_country_invalid_address: las empresas deben estar ubicadas en el mismo país que la cuenta
+      account_invalid: Cuenta inválida
+      account_number_invalid: Número de cuenta no válido
+      alipay_upgrade_required: se requiere actualización de Alipay
+      amount_too_large: la cantidad especificada es mayor que la cantidad máxima permitida
+      amount_too_small: la cantidad especificada es menor que la cantidad mínima permitida
+      api_key_expired: la clave api ha caducado
+      balance_insufficient: la cuenta no tiene un saldo suficiente disponible
+      bank_account_exists: la cuenta bancaria proporcionada ya existe
+      bank_account_unusable: la cuenta bancaria proporcionada no se puede utilizar
+      bank_account_unverified: su plataforma Connect intenta compartir una cuenta bancaria no verificada con una cuenta conectada.
+      bitcoin_upgrade_required: este método para crear pagos de Bitcoin ya no es compatible
+      charge_already_captured: el cargo ya ha sido capturado
+      charge_already_refunded: el cargo ya ha sido reembolsado
+      charge_disputed: los cargos que está intentando reembolsar se han facturado.
+      charge_exceeds_source_limit: esta carga provocará que exceda el límite de procesamiento de su ventana actual para este tipo de fuente
+      charge_expired_for_capture: este cargo ha caducado
+      country_unsupported: nuestro país no es compatible con nuestro sistema
+      coupon_expired: el cupón ha caducado
+      customer_max_subscriptions: ha alcanzado el número máximo de suscripciones
+      email_invalid: email inválido
+      idempotency_key_in_use: la clave de idempotency proporcionada se está utilizando actualmente en otra solicitud.
+      incorrect_address: dirección no válida
+      instant_payouts_unsupported: la tarjeta de débito proporcionada como cuenta externa no admite pagos instantáneos.
+      invalid_card_type: este tipo de tarjeta no es compatible
+      invalid_charge_amount: la cantidad especificada no es válida
+      invalid_source_usage: la fuente no se puede usar porque no está en el estado correcto.
+      invoice_no_customer_line_items: No se puede generar ninguna factura para el cliente especificado porque no hay un elemento de factura pendiente.
+      invoice_no_subscription_line_items: No se puede generar una factura para la suscripción especificada porque no hay ningún elemento de facturación pendiente.
+      invoice_not_editable: la factura especificada no se puede cambiar.
+      invoice_upcoming_none: no hay ninguna factura que venga en el cliente especificado para previsualizar.
+      livemode_mismatch: las claves, las solicitudes y los objetos API en modo de prueba y en tiempo real solo están disponibles en el modo en que se encuentran.
+      not_allowed_on_standard_account: No se permiten transferencias ni pagos en nombre de una cuenta conectada estándar.
+      order_creation_failed: No se pudo crear el comando. Compruebe los detalles del pedido y vuelva a intentarlo.
+      order_required_settings: el pedido no se pudo procesar porque falta la información requerida.
+      order_status_invalid: el comando no se puede actualizar porque el estado proporcionado no es válido o no sigue el ciclo de vida del comando.
+      order_upstream_timeout: la solicitud ha caducado. Inténtalo de nuevo más tarde.
+      out_of_inventory: El SKU está agotado.
+      parameter_invalid_empty: Falta información
+      parameter_invalid_integer: debe ser un número
+      parameter_invalid_string_blank: No puede estar vacío
+      parameter_invalid_string_empty: los campos deben tener al menos un carácter
+      parameter_missing: falta de parámetro
+      parameter_unknown: Parámetro desconocido
+      parameters_exclusive: Se han proporcionado dos o más parámetros mutuamente exclusivos.
+      payment_intent_authentication_failure: el método de pago proporcionado falló durante la autenticación.
+      payment_intent_incompatible_payment_method: La intención de pago proporcionada para un método de pago con propiedades diferentes a las proporcionadas.
+      payment_intent_invalid_parameter: No se permitieron los parámetros para la transacción dada en PaymentIntent.
+      payment_intent_payment_attempt_failed: Falló el último intento de pago para PaymentIntent.
+      payment_intent_unexpected_state: el estado de PaymentIntent fue incompatible con la operación que estaba intentando realizar.
+      payment_method_unactivated: el cargo no se puede crear porque el método de pago utilizado no se ha activado.
+      payment_method_unexpected_state: el estado del método de pago proporcionado era incompatible con la operación que estaba intentando realizar.
+      payouts_not_allowed: los pagos se han deshabilitado en la cuenta conectada.
+      platform_api_key_expired: La clave API proporcionada por su plataforma Connect ha caducado.
+      postal_code_invalid: el código postal proporcionado es incorrecto.
+      product_inactive: El producto al que pertenece este producto ya no está disponible para su compra.
+      resource_already_exists: este recurso ya existe
+      resource_missing: el identificador proporcionado no es válido.
+      routing_number_invalid: el número de enrutamiento del banco proporcionado no es válido.
+      secret_key_required: La clave de API proporcionada es una clave de publicación, pero se requiere una clave secreta.
+      sepa_unsupported_account: su cuenta no admite pagos SEPA.
+      shipping_calculation_failed: El cálculo del envío falló porque la información proporcionada era incorrecta o no se pudo verificar.
+      sku_inactive: el SKU está inactivo y ya no está disponible para su compra.
+      state_unsupported: cuenta personalizada de EE. UU. La persona jurídica no es válida
+      tax_id_invalid: el ID de impuesto proporcionado no es válido
+      taxes_calculation_failed: Falló el cálculo de impuestos para el pedido.
+      testmode_charges_only: su cuenta no se ha activado y solo puede cobrar una tarifa de prueba.
+      tls_version_unsupported: debe usar TLS 1.2 o posterior.
+      token_already_used: el token proporcionado ya se ha utilizado.
+      token_in_use: el token proporcionado se usa actualmente en otra solicitud.
+      transfers_not_allowed: la transferencia solicitada no se puede crear. Póngase en contacto con nosotros si recibe este error.
+      upstream_order_creation_failed: No se pudo crear el comando. Compruebe los detalles del pedido y vuelva a intentarlo.
+      url_invalid: la URL proporcionada no es válida.
+      connection_error: Conexión perdida a Stripe

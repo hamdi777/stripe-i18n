@@ -1,15 +1,128 @@
 nb:
   stripe:
     errors:
-      incorrect_number: "Kortnummeret er feil."
-      invalid_number: "Kortnummeret er ugyldig"
-      invalid_expiry_month: "Utløpsmåned på kortet er ugyldig."
-      invalid_expiry_year: "Utløpsåret på kortet er ugyldig."
-      invalid_cvc: "Sikkerhetskoden på kortet (CVC) er ugyldig."
-      expired_card: "Kortet har utløpt."
-      incorrect_cvc: "Sikkerhetskoden for kortet (CVC) er feil."
-      incorrect_zip: "Kortet feilet validering av postnummer."
-      card_declined: "Kortet ble avvist."
-      missing: "Det finnes ingen kort på kunden."
-      processing_error: "En feil oppstod ved behandling av kortet."
-      rate_limit: "En feil oppstod da, grunnet for mange forespørsler til Stripe API. Vennligst kontakt oss hvis du opplever denne feilen ofte."
+      card_declined:
+      reason:
+      decline_reasons:
+        invalid_expiry_month:
+        approve_with_id:
+        call_issuer:
+        card_not_supported:
+        card_velocity_exceeded:
+        currency_not_supported:
+        do_not_honor:
+        do_not_try_again:
+        duplicate_transaction:
+        expired_card:
+        fraudulent:
+        generic_decline:
+        incorrect_number:
+        incorrect_cvc:
+        incorrect_pin:
+        incorrect_zip:
+        insufficient_funds:
+        invalid_account:
+        invalid_amount:
+        invalid_cvc:
+        invalid_expiry_year:
+        invalid_number:
+        invalid_pin:
+        issuer_not_available:
+        lost_card:
+        merchant_blacklist:
+        new_account_information_available:
+        no_action_taken:
+        not_permitted:
+        pickup_card:
+        pin_try_exceeded:
+        processing_error:
+        reenter_transaction:
+        restricted_card:
+        revocation_of_all_authorizations:
+        revocation_of_authorization:
+        security_violation:
+        service_not_allowed:
+        stolen_card:
+        stop_payment_order:
+        testmode_decline:
+        transaction_not_allowed:
+        try_again_later:
+        withdrawal_count_limit_exceeded:
+      missing:
+      processing_error:
+      rate_limit:
+      account_already_exists:
+      account_country_invalid_address:
+      account_invalid:
+      account_number_invalid:
+      alipay_upgrade_required:
+      amount_too_large:
+      amount_too_small:
+      api_key_expired:
+      balance_insufficient:
+      bank_account_exists:
+      bank_account_unusable:
+      bank_account_unverified:
+      bitcoin_upgrade_required:
+      charge_already_captured:
+      charge_already_refunded:
+      charge_disputed:
+      charge_exceeds_source_limit:
+      charge_expired_for_capture:
+      country_unsupported:
+      coupon_expired:
+      customer_max_subscriptions:
+      email_invalid:
+      idempotency_key_in_use:
+      incorrect_address:
+      instant_payouts_unsupported:
+      invalid_card_type:
+      invalid_charge_amount:
+      invalid_source_usage:
+      invoice_no_customer_line_items:
+      invoice_no_subscription_line_items:
+      invoice_not_editable:
+      invoice_upcoming_none:
+      livemode_mismatch:
+      not_allowed_on_standard_account:
+      order_creation_failed:
+      order_required_settings:
+      order_status_invalid:
+      order_upstream_timeout:
+      out_of_inventory:
+      parameter_invalid_empty:
+      parameter_invalid_integer:
+      parameter_invalid_string_blank:
+      parameter_invalid_string_empty:
+      parameter_missing:
+      parameter_unknown:
+      parameters_exclusive:
+      payment_intent_authentication_failure:
+      payment_intent_incompatible_payment_method:
+      payment_intent_invalid_parameter:
+      payment_intent_payment_attempt_failed:
+      payment_intent_unexpected_state:
+      payment_method_unactivated:
+      payment_method_unexpected_state:
+      payouts_not_allowed:
+      platform_api_key_expired:
+      postal_code_invalid:
+      product_inactive:
+      resource_already_exists:
+      resource_missing:
+      routing_number_invalid:
+      secret_key_required:
+      sepa_unsupported_account:
+      shipping_calculation_failed:
+      sku_inactive:
+      state_unsupported:
+      tax_id_invalid:
+      taxes_calculation_failed:
+      testmode_charges_only:
+      tls_version_unsupported:
+      token_already_used:
+      token_in_use:
+      transfers_not_allowed:
+      upstream_order_creation_failed:
+      url_invalid:
+      connection_error:

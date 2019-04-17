@@ -1,15 +1,128 @@
 de:
   stripe:
     errors:
-      incorrect_number: "Die Kartennummer ist falsch."
-      invalid_number: "Die Kartennummer ist keine gültige Kreditkartennummer."
-      invalid_expiry_month: "Der Monat des Ablaufdatums ist ungültig."
-      invalid_expiry_year: "Das Jahr des Ablaufdatums ist ungültig."
-      invalid_cvc: "Der Sicherheitscode ist ungültig."
-      expired_card: "Die Karte ist abgelaufen."
-      incorrect_cvc: "Der Sicherheitscode ist falsch."
-      incorrect_zip: "Die Postleitzahl ist ungültig."
-      card_declined: "Die Karte wurde abgelehnt."
-      missing: "Es gibt keine Karte von der abgebucht wird."
-      processing_error: "Ein Fehler ist aufgetreten bei der Bearbeitung der Karteninformationen."
-      rate_limit: "Es ist ein Fehler aufgetreten bei der API-Anfrage. Bitte lassen Sie uns wissen wenn dieses Problem konstant vorkommt."
+      card_declined: Die Karte wurde abgelehnt.
+      reason: Grund
+      decline_reasons:
+        invalid_expiry_month: Der Verfallsmonat der Karte ist ungültig.
+        approve_with_id: Die Zahlung kann nicht autorisiert werden.
+        call_issuer: Die Karte wurde aus einem unbekannten Grund abgelehnt. Kontaktieren Sie uns bitte.
+        card_not_supported: Die Karte unterstützt diese Art des Kaufs nicht.
+        card_velocity_exceeded: Sie haben das auf ihrer Karte verfügbare Kontostand oder Kreditlimit überschritten.
+				currency_not_supported: Die Karte unterstützt die angegebene Währung nicht.
+				do_not_honor: Die Karte wurde aus einem unbekannten Grund abgelehnt. Kontaktieren Sie uns bitte.
+				do_not_try_again: Die Karte wurde aus einem unbekannten Grund abgelehnt. Kontaktieren Sie uns bitte.
+				duplicate_transaction: Vor kurzem wurde eine Transaktion mit identischem Betrag und Kreditkarteninformationen übermittelt.
+				expired_card: Die Karte ist abgelaufen.
+        fraudulent: Die Zahlung wurde abgelehnt, da Stripe es für betrügerisch hält.
+				generic_decline: Die Karte wurde aus einem unbekannten Grund abgelehnt. Kontaktieren Sie uns bitte.
+        incorrect_number: Die Kartennummer ist falsch.
+				incorrect_cvc: Die CVC-Nummer ist falsch.
+				incorrect_pin: Die eingegebene PIN ist falsch. Dieser Ablehnungscode gilt nur für Zahlungen mit einem Kartenleser.
+				incorrect_zip: Die Postleitzahl ist falsch.
+        insufficient_funds: Die Karte hat nicht genügend Geld, um den Kauf abzuschließen.
+				invalid_account: Die Karte oder das Konto, mit dem die Karte verbunden ist, ist ungültig.
+				invalid_amount: Der Zahlungsbetrag ist ungültig oder überschreitet den zulässigen Betrag.
+				invalid_cvc: Die CVC-Nummer ist falsch.
+				invalid_expiry_year: Das Verfallsjahr ist ungültig.
+				invalid_number: Die Kartennummer ist falsch.
+				invalid_pin: Die eingegebene PIN ist falsch. Dieser Ablehnungscode gilt nur für Zahlungen mit einem Kartenleser.
+				issuer_not_available: Der Kartenaussteller konnte nicht erreicht werden, sodass die Zahlung nicht autorisiert werden konnte.
+				lost_card: Die Zahlung wurde abgelehnt, da die Karte als verloren gemeldet wurde.
+				merchant_blacklist: Die Zahlung wurde abgelehnt, da sie mit einem Wert in der Blockliste des Stripe-Benutzers übereinstimmt.
+				new_account_information_available: Die Karte oder das Konto, mit dem die Karte verbunden ist, ist ungültig.
+				no_action_taken: Die Karte wurde aus einem unbekannten Grund abgelehnt. Kontaktieren Sie uns bitte.
+				not_permitted: Die Zahlung ist nicht zulässig.
+				pickup_card: Die Karte kann nicht für diese Zahlung verwendet werden (es ist möglich, dass sie als verloren oder gestohlen gemeldet wurde).
+				pin_try_exceeded: Die zulässige Anzahl von PIN-Versuchen wurde überschritten.
+				processing_error: Bei der Verarbeitung der Karte ist ein Fehler aufgetreten.
+				reenter_transaction: Die Zahlung konnte vom Emittenten aus einem unbekannten Grund nicht verarbeitet werden.
+				restricted_card: Die Karte kann nicht für diese Zahlung verwendet werden (es ist möglich, dass sie als verloren oder gestohlen gemeldet wurde).
+				revocation_of_all_authorizations: Die Karte wurde aus einem unbekannten Grund abgelehnt.
+				revocation_of_authorization: Die Karte wurde aus einem unbekannten Grund abgelehnt. Kontaktieren Sie uns bitte.
+				security_violation: Die Karte wurde aus einem unbekannten Grund abgelehnt. Kontaktieren Sie uns bitte.
+				service_not_allowed: Die Karte wurde aus einem unbekannten Grund abgelehnt. Kontaktieren Sie uns bitte.
+				stolen_card: Die Zahlung wurde abgelehnt, weil die Karte als gestohlen gemeldet wurde.
+				stop_payment_order: Die Karte wurde aus einem unbekannten Grund abgelehnt. Kontaktieren Sie uns bitte.
+				testmode_decline: Eine Streifentestkartennummer wurde verwendet.
+				transaction_not_allowed: Die Karte wurde aus einem unbekannten Grund abgelehnt. Kontaktieren Sie uns bitte.
+				try_again_later: Die Karte wurde aus einem unbekannten Grund abgelehnt. Kontaktieren Sie uns bitte.
+				withdrawal_count_limit_exceeded: Der Kunde hat das auf seiner Karte verfügbare Guthaben oder Kreditlimit überschritten.
+      missing: Es gibt keine Karte bei einem Kunden, der belastet wird.
+			processing_error: Bei der Verarbeitung der Karte ist ein Fehler aufgetreten.
+			rate_limit: Es ist ein Fehler aufgetreten, weil Anforderungen die API zu schnell treffen. Bitte lassen Sie uns wissen, wenn Sie ständig auf diesen Fehler stoßen.
+			account_already_exists: Dieses Konto ist bereits vorhanden
+			account_country_invalid_address: Unternehmen müssen sich in demselben Land befinden wie das Konto
+			account_invalid: Ungültiger Account
+			account_number_invalid: Ungültige Kontonummer
+			alipay_upgrade_required: Alipay-Upgrade erforderlich
+      amount_too_large: Der angegebene Betrag ist größer als der maximal zulässige Betrag
+			amount_too_small: Der angegebene Betrag liegt unter dem zulässigen Mindestbetrag
+			api_key_expired: Der API-Schlüssel ist abgelaufen
+      balance_insufficient: Konto verfügt nicht über ein ausreichendes Guthaben
+			bank_account_exists: Das angegebene Bankkonto ist bereits vorhanden
+			bank_account_unusable: Das angegebene Bankkonto kann nicht für Auszahlungen verwendet werden
+			bank_account_unverified: Ihre Connect-Plattform versucht, ein nicht verifiziertes Bankkonto mit einem verbundenen Konto zu teilen.
+			bitcoin_upgrade_required: Diese Methode zum Erstellen von Bitcoin-Zahlungen wird nicht mehr unterstützt
+			charge_already_captured: Die Gebühr wurde bereits erfasst
+			charge_already_refunded: Die Gebühr wurde bereits zurückerstattet
+      charge_disputed: Die Kosten, die Sie zu erstatten versuchen, wurden in Rechnung gestellt.
+      charge_exceeds_source_limit: Diese Belastung würde dazu führen, dass Sie die Verarbeitungsgrenze Ihres aktuellen Fensters für diesen Quelltyp überschreiten
+			charge_expired_for_capture: Diese Gebühr ist abgelaufen
+			country_unsupported: Ihr Land wird von unserem System nicht unterstützt
+			coupon_expired: Der Gutschein ist abgelaufen
+			customer_max_subscriptions: Sie haben die maximale Anzahl an Abonnements erreicht
+			email_invalid: ungültige E-Mail
+			idempotency_key_in_use: Der angegebene Idempotency-Schlüssel wird derzeit in einer anderen Anfrage verwendet.
+      incorrect_address: Ungültige Adresse
+			instant_payouts_unsupported: Die als externes Konto bereitgestellte Debitkarte unterstützt keine Sofortzahlungen.
+			invalid_card_type: Dieser Kartentyp wird nicht unterstützt
+			invalid_charge_amount: Der angegebene Betrag ist ungültig
+			invalid_source_usage: Die Quelle kann nicht verwendet werden, da sie sich nicht im richtigen Status befindet.
+			invoice_no_customer_line_items: Für den angegebenen Kunden kann keine Rechnung generiert werden, da keine Rechnungsposition aussteht.
+			invoice_no_subscription_line_items: Für das angegebene Abonnement kann keine Rechnung erstellt werden, da keine Rechnungsposition aussteht.
+			invoice_not_editable: Die angegebene Rechnung kann nicht geändert werden.
+			invoice_upcoming_none: Auf dem angegebenen Client wird keine Rechnung zur Vorschau angezeigt.
+			livemode_mismatch: Die Schlüssel, Anforderungen und API-Objekte im Test- und Echtzeitmodus sind nur in dem Modus verfügbar, in dem sie sich befinden.
+			not_allowed_on_standard_account: Überweisungen und Zahlungen im Auftrag eines verbundenen Standardkontos sind nicht zulässig.
+			order_creation_failed: Der Befehl konnte nicht erstellt werden. Überprüfen Sie die Bestelldetails und versuchen Sie es erneut.
+			order_required_settings: Die Bestellung konnte nicht verarbeitet werden, da die erforderlichen Informationen fehlen.
+			order_status_invalid: Der Befehl kann nicht aktualisiert werden, da der angegebene Status ungültig ist oder nicht dem Lebenszyklus des Befehls folgt.
+			order_upstream_timeout: Die Anforderung ist abgelaufen. Versuchen Sie es später erneut.
+			out_of_inventory: Die SKU ist nicht auf Lager.
+			parameter_invalid_empty: Fehlende Informationen
+			parameter_invalid_integer: Muss eine Zahl sein
+			parameter_invalid_string_blank: Kann nicht leer sein
+			parameter_invalid_string_empty: Felder müssen mindestens ein Zeichen enthalten
+			parameter_missing: Fehlender Parameter
+			parameter_unknown: Unbekannter Parameter
+			parameters_exclusive: Zwei oder mehr sich gegenseitig ausschließende Parameter wurden bereitgestellt.
+			payment_intent_authentication_failure: Die angegebene Zahlungsmethode ist während der Authentifizierung fehlgeschlagen.
+			payment_intent_incompatible_payment_method: Die Zahlungsabsicht, die für eine Zahlungsmethode mit anderen als den angegebenen Eigenschaften angegeben wurde.
+			payment_intent_invalid_parameter: Parameter für die auf PaymentIntent angegebene Transaktion nicht zulässig.
+			payment_intent_payment_attempt_failed: Der letzte Zahlungsversuch für PaymentIntent ist fehlgeschlagen.
+			payment_intent_unexpected_state: Der Status "PaymentIntent" war mit dem Vorgang, den Sie ausführen wollten, nicht kompatibel.
+			payment_method_unactivated: Die Gebühr kann nicht erstellt werden, da die verwendete Zahlungsmethode nicht aktiviert wurde.
+			payment_method_unexpected_state: Der Status der angegebenen Zahlungsmethode war mit dem Vorgang, den Sie ausführen wollten, nicht kompatibel.
+			payouts_not_allowed: Zahlungen wurden für das verbundene Konto deaktiviert.
+			platform_api_key_expired: Der von Ihrer Connect-Plattform bereitgestellte API-Schlüssel ist abgelaufen.
+			postal_code_invalid: Die angegebene Postleitzahl ist falsch.
+			product_inactive: Das Produkt, zu dem dieses Produkt gehört, kann nicht mehr gekauft werden.
+			resource_already_exists: Diese Ressource ist bereits vorhanden
+			resource_missing: Der angegebene Bezeichner ist ungültig.
+			routing_number_invalid: Die angegebene Bankleitzahl ist ungültig.
+			secret_key_required: Der bereitgestellte API-Schlüssel ist ein veröffentlichbarer Schlüssel, es ist jedoch ein geheimer Schlüssel erforderlich.
+			sepa_unsupported_account: Ihr Konto unterstützt keine SEPA-Zahlungen.
+			shipping_calculation_failed: Versandberechnung fehlgeschlagen, weil die bereitgestellten Informationen falsch waren oder nicht überprüft werden konnten.
+			sku_inactive: Die SKU ist inaktiv und kann nicht mehr gekauft werden.
+			state_unsupported: US Custom Account Die juristische Person ist ungültig
+			tax_id_invalid: Die angegebene Steuer-ID ist ungültig
+			tax_calculation_failed: Die Steuerberechnung für die Bestellung ist fehlgeschlagen.
+			testmode_charges_only: Ihr Konto wurde nicht aktiviert und kann nur eine Testgebühr erheben.
+			tls_version_unsupported: Sie müssen TLS 1.2 oder höher verwenden.
+			token_already_used: Das bereitgestellte Token wurde bereits verwendet.
+			token_in_use: Das bereitgestellte Token wird derzeit in einer anderen Anforderung verwendet.
+			transfers_not_allowed: Die angeforderte Übertragung kann nicht erstellt werden. Kontaktieren Sie uns, wenn Sie diesen Fehler erhalten.
+			upstream_order_creation_failed: Der Befehl konnte nicht erstellt werden. Überprüfen Sie die Bestelldetails und versuchen Sie es erneut.
+			url_invalid: Die angegebene URL ist ungültig.
+			connection_error: Verbindung zu Stripe unterbrochen
