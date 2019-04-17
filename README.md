@@ -4,7 +4,7 @@ StripeI18n
 [![Build
 Status](https://secure.travis-ci.org/ekosz/stripe-i18n.png)](http://travis-ci.org/ekosz/stripe-i18n)
 
-The gem adds a collection of translated error strings for `Stripe::CardError`.
+The gem adds a collection of translated error strings for 'All Stripe errors'
 
 **Supported Locales:**
 
@@ -13,12 +13,12 @@ The gem adds a collection of translated error strings for `Stripe::CardError`.
 1. de (German)
 1. fr (French)
 1. it (Italian)
-1. nl (Dutch)
-1. pt-BR (Portuguese - Brazil)
-1. ru (Russian)
-1. nb (Norwegian)
-1. ja (Japanese)
-1. zh-HK (Chinese - Hong Kong)
+1. nl (Dutch) -- TODO
+1. pt-BR (Portuguese - Brazil) -- TODO
+1. ru (Russian) -- TODO
+1. nb (Norwegian) -- TODO
+1. ja (Japanese) -- TODO
+1. zh-HK (Chinese - Hong Kong) -- TODO
 
 ## Installation
 
