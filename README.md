@@ -37,8 +37,26 @@ Or install it yourself as:
     $ gem install stripe-i18n
 
 ## Usage
+add this method in your helper.rb
 
-Use the code on the error object (`Stripe::CardError`) to get the correct
+def flash_stripe_errors(stripe_error)
+    body = stripe_error.json_body
+    err  = body[:error] if body
+    code = err[:code] if err
+    if stripe_error.is_a?(Stripe::APIConnectionError)
+      msg = I18n.t("stripe.errors.connection_error")
+    else
+      if err[:decline_code]
+        msg = I18n.t("stripe.errors.#{code}") + " " + I18n.t("stripe.errors.reason") + ": " +            I18n.t("stripe.errors.decline_reasons.#{err[:decline_code]}")
+      else
+        msg = I18n.t("stripe.errors.#{code}")
+      end
+    end
+    flash[:alert] = msg
+ end
+  
+  
+Use the code on the error object to get the correct
 translation key.
 
 ```ruby
@@ -50,8 +68,8 @@ def charge_token(token, amount)
   )
 
   { success: true, msg: I18n.translate('charge.success') }
-rescue Stripe::CardError => e
-  { success: false, msg: I18n.translate("stripe.errors.#{e.code}") }
+rescue Stripe::CardError, Stripe::RateLimitError, Stripe::APIConnectionError, Stripe::InvalidRequestError, Stripe::AuthenticationError, Stripe::StripeError => e
+    flash_stripe_errors(e)
 end
 ```
 
