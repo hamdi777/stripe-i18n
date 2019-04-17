@@ -38,7 +38,7 @@ Or install it yourself as:
 
 ## Usage
 add this method in your helper.rb
-
+```ruby
 def flash_stripe_errors(stripe_error)
     body = stripe_error.json_body
     err  = body[:error] if body
@@ -54,7 +54,8 @@ def flash_stripe_errors(stripe_error)
     end
     flash[:alert] = msg
  end
-  
+ 
+ ```
   
 Use the code on the error object to get the correct
 translation key.
